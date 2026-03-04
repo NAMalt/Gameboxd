@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameLog - Game Details</title>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <nav>
+        <span class="nav-logo">GameLog</span>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="log.html">Log</a></li>
+        </ul>
+    </nav>
+
+    <div class="wrapper">
+
+        <!-- Top search bar -->
+        <div class="top-search">
+            <input type="text" placeholder="Search for a game..." />
+            <button class="search-btn">Search</button>
+        </div>
+
+        <!-- Main detail layout -->
+        <div class="detail-layout">
+
+            <!-- Left: Info + Reviews -->
+            <div>
+                <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; align-items:flex-start;">
+                    <div class="game-cover-lg">Game Cover</div>
+                    <div>
+                        <h1 style="font-size:1.6rem; margin-bottom:0.3rem;">Game Title</h1>
+                        <p style="color:var(--muted); font-size:0.85rem; margin-bottom:0.2rem;">by Developer Name</p>
+                        <p style="color:var(--muted); font-size:0.85rem; margin-bottom:0.2rem;">Release Date: Jan 1, 2024</p>
+                        <p style="color:var(--muted); font-size:0.85rem; margin-bottom:1rem;">Genre: Action / RPG</p>
+                        <p style="font-size:0.9rem; line-height:1.6; color:var(--text);">
+                            A gripping open-world adventure set in a sprawling fantasy kingdom. 
+                            Players take on the role of a wandering mercenary drawn into an ancient 
+                            conflict that will determine the fate of the realm. Features deep 
+                            character customization and a dynamic weather system.
+                        </p>
+                        <div style="margin-top:1rem;">
+                            <a href="log.html" class="submit-btn" style="display:inline-block; margin-top:0.5rem;">Log This Game</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Reviews -->
+                <div class="section-header" style="margin-top:0;">
+                    <h2>User Reviews</h2>
+                    <a href="#">See all →</a>
+                </div>
+
+                <div class="review-row">
+                    <div class="review-card">
+                        <div class="reviewer">user1234 &mdash; <span style="color:var(--accent)">★★★★☆</span></div>
+                        <p>A stunning achievement in game design. The combat is fluid and rewarding...</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="reviewer">gamer99 &mdash; <span style="color:var(--accent)">★★★★★</span></div>
+                        <p>Absolutely incredible. Easily my game of the year. The world feels truly alive.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="reviewer">coolplayer &mdash; <span style="color:var(--accent)">★★★☆☆</span></div>
+                        <p>Good, not great. The first half is excellent but pacing stumbles later on.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Similar Titles -->
+            <div>
+                <div class="section-header" style="margin-top:0;">
+                    <h2>Similar Titles</h2>
+                </div>
+
+                <div class="similar-grid">
+                    <div class="cover-sm">Game Cover</div>
+                    <div class="cover-sm">Game Cover</div>
+                    <div class="cover-sm">Game Cover</div>
+                    <div class="cover-sm">Game Cover</div>
+                    <div class="cover-sm">Game Cover</div>
+                    <div class="cover-sm">Game Cover</div>
+                </div>
+
+                <button class="see-more-btn">See More</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>GameLog &mdash; Track what you play, share what you love.</p>
+    </footer>
+
+</body>
+</html>

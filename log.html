@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameLog - Log a Game</title>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <nav>
+        <span class="nav-logo">GameLog</span>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="log.html" class="active">Log</a></li>
+        </ul>
+    </nav>
+
+    <div class="wrapper">
+
+        <!-- Game Info + Write Review -->
+        <div class="game-detail-layout">
+
+            <!-- Left: Cover + Meta -->
+            <div>
+                <div class="game-cover-lg"></div>
+                <div style="margin-top: 1rem;">
+                    <p style="font-size:0.85rem; color:var(--muted);">Release Date: Jan 1, 2024</p>
+                    <p style="font-size:0.85rem; color:var(--muted);">Devs: Studio Name</p>
+                    <p style="font-size:0.85rem; color:var(--muted);">Genre: Action / RPG</p>
+                </div>
+            </div>
+
+            <!-- Right: Review Form -->
+            <div>
+                <h1 style="font-size:1.6rem; margin-bottom:0.25rem;">Game Title</h1>
+
+                <div class="like-section">
+                    <button class="like-btn">♥</button>
+                    <span class="like-count">12,341 likes</span>
+                </div>
+
+                <div class="review-section">
+                    <h3>Write Your Review</h3>
+                    <textarea placeholder="What did you think?"></textarea>
+
+                    <div class="star-row">
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                    </div>
+
+                    <button class="submit-btn">Submit Review</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Friend Reviews -->
+        <div class="section-header">
+            <h2>Friend Reviews</h2>
+            <a href="#">See all →</a>
+        </div>
+
+        <div class="review-row">
+            <div class="review-card">
+                <div class="reviewer">Friend1 &mdash; <span style="color:var(--accent)">★★★☆☆</span></div>
+                <p>Really enjoyed the combat system, but the story felt a bit weak in the third act...</p>
+            </div>
+            <div class="review-card">
+                <div class="reviewer">Friend2 &mdash; <span style="color:var(--accent)">★★★★★</span></div>
+                <p>Absolute masterpiece. One of the best games I've played in years. Can't recommend it enough.</p>
+            </div>
+            <div class="review-card">
+                <div class="reviewer">Friend3 &mdash; <span style="color:var(--accent)">★★☆☆☆</span></div>
+                <p>Not really my type of game, but I can see why others love it. Graphics are stunning though.</p>
+            </div>
+        </div>
+
+        <!-- Other User Reviews -->
+        <div class="section-header">
+            <h2>Other User Reviews</h2>
+            <a href="#">See all →</a>
+        </div>
+
+        <div class="review-row">
+            <div class="review-card">
+                <div class="reviewer">user1234 &mdash; <span style="color:var(--accent)">★★★★☆</span></div>
+                <p>Solid entry in the series. New mechanics feel fresh, though some bugs persist at launch.</p>
+            </div>
+            <div class="review-card">
+                <div class="reviewer">gamer99 &mdash; <span style="color:var(--accent)">★★★★★</span></div>
+                <p>Completely blown away. The world-building alone deserves a 10/10. Spent 80 hours and loved every second.</p>
+            </div>
+            <div class="review-card">
+                <div class="reviewer">coolplayer &mdash; <span style="color:var(--accent)">★★★☆☆</span></div>
+                <p>Fun but flawed. Worth picking up on sale. The side quests are surprisingly deep.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>GameLog &mdash; Track what you play, share what you love.</p>
+    </footer>
+
+</body>
+</html>
