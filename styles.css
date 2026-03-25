@@ -90,7 +90,7 @@ nav ul li a.active {
 /* === GAME CARD ROW === */
 .card-row {
     display: flex;
-    gap: 1rem;
+    gap: 5rem;
     overflow-x: auto;
     padding-bottom: 0.5rem;
 }
@@ -106,8 +106,8 @@ nav ul li a.active {
 }
 
 .game-card .cover {
-    width: 130px;
-    height: 170px;
+    width: 450px;
+    height: 200px;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 6px;
@@ -122,7 +122,7 @@ nav ul li a.active {
 .game-card:hover .cover { border-color: var(--accent); }
 
 .game-card .card-label {
-    font-size: 0.75rem;
+    font-size: 1.5rem;
     color: var(--muted);
     margin-top: 0.4rem;
     white-space: nowrap;
@@ -141,14 +141,14 @@ nav ul li a.active {
 }
 
 .friend-card .friend-name {
-    font-size: 0.7rem;
+    font-size: 1.5rem;
     color: var(--muted);
     margin-bottom: 0.3rem;
 }
 
 .friend-card .cover {
-    width: 100px;
-    height: 130px;
+    width: 200px;
+    height: 260px;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 6px;
