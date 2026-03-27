@@ -15,7 +15,7 @@
             <li><a href="profile.html">Profile</a></li>
             <li><a href="games.html">Games</a></li>
             <li><a href="log.html">Log</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="login.html" id="loginNavLink">Login</a></li>
         </ul>
     </nav>
 
@@ -124,7 +124,10 @@
         <p>Gameboxd &mdash; Track what you play.</p>
     </footer>
 
-    <script src="auth.js"></script>
+    <script type="module">
+        import { setupNavigationState } from "./auth.js";
+        setupNavigationState();
+    </script>
 
 </body>
 </html>

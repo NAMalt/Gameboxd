@@ -1,36 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Create Account — Gameboxd</title>
-  <link rel="stylesheet" href="styles.css" />
- </head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Create Account — Gameboxd</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
 <body>
 
-  <main class="login-container" role="main">
-    <h1>Create an account</h1>
-    <form id="createForm" novalidate>
-      <div class="field">
-        <label for="newUsername">Username</label>
-        <input type="text" id="newUsername" name="newUsername" autocomplete="username" required />
-      </div>
+    <main class="login-container" role="main">
+        <h1>Create an account</h1>
+        <form id="createForm" novalidate>
+            <div class="field">
+                <label for="newUsername">Username</label>
+                <input type="text" id="newUsername" name="newUsername" autocomplete="username" required />
+            </div>
 
-      <div class="field">
-        <label for="newPassword">Password</label>
-        <input type="password" id="newPassword" name="newPassword" autocomplete="new-password" required />
-      </div>
+            <div class="field">
+                <label for="newPassword">Password</label>
+                <input type="password" id="newPassword" name="newPassword" autocomplete="new-password" required />
+            </div>
 
-      <div class="actions">
-        <button type="submit" class="btn-primary">Create account</button>
-        <a href="login.html"><button type="button" class="btn-secondary">Back to login</button></a>
-      </div>
+            <div class="actions">
+                <button type="submit" class="btn-primary">Create account</button>
+                <a href="login.html"><button type="button" class="btn-secondary">Back to login</button></a>
+            </div>
 
-      <p class="note">Choose a username and password to create your account, for now only stores accounts in browser.</p>
-    </form>
-  </main>
+            <p class="note">Choose a username and password to create your account.</p>
+        </form>
+    </main>
 
-  <script src="createAccount.js"></script>
-  <script src="auth.js"></script>
+    <script type="module">
+        import { initializeCreateAccountPage } from "./createAccount.js";
+        import { setupNavigationState } from "./auth.js";
+
+        initializeCreateAccountPage();
+        setupNavigationState();
+    </script>
 </body>
 </html>

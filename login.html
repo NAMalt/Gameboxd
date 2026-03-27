@@ -1,38 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>Gameboxd - Login</title>
-	<link rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gameboxd - Login</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-	<main class="login-container" role="main">
-		<h1>Sign in to Gameboxd</h1>
-		<form id="loginForm" novalidate>
-			<div class="field">
-				<label for="username">Username</label>
-				<input type="text" id="username" name="username" autocomplete="username" required aria-required="true" />
-			</div>
+    <main class="login-container" role="main">
+        <h1>Sign in to Gameboxd</h1>
+        <form id="loginForm" novalidate>
+            <div class="field">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" autocomplete="username" required aria-required="true" />
+            </div>
 
-			<div class="field">
-				<label for="password">Password</label>
-				<input type="password" id="password" name="password" autocomplete="current-password" required aria-required="true" />
-			</div>
+            <div class="field">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" autocomplete="current-password" required aria-required="true" />
+            </div>
 
-			<div class="actions">
-				<button type="submit" class="btn-primary" id="loginBtn">Sign in</button>
-				<button type="button" class="btn-secondary" id="createAccountBtn">Create account</button>
-			</div>
+            <div class="actions">
+                <button type="submit" class="btn-primary" id="loginBtn">Sign in</button>
+                <button type="button" class="btn-secondary" id="createAccountBtn">Create account</button>
+            </div>
 
-			<p class="note">Don't have an account? Use "Create account" to get started.</p>
-		</form>
-	</main>
+            <p class="note">Don't have an account? Use "Create account" to get started.</p>
+        </form>
+    </main>
 
-	<script src="login.js"></script>
-	<script src="auth.js"></script>
+    <script type="module">
+        import { initializeLoginPage } from "./login.js";
+        import { setupNavigationState } from "./auth.js";
 
+        initializeLoginPage();
+        setupNavigationState();
+    </script>
 </body>
 </html>
-

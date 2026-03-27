@@ -15,6 +15,7 @@
             <li><a href="profile.html" class="active">Profile</a></li>
             <li><a href="games.html">Games</a></li>
             <li><a href="log.html">Log</a></li>
+            <li><a href="login.html" id="loginNavLink">Login</a></li>
         </ul>
     </nav>
 
@@ -107,17 +108,12 @@
         <p>Gameboxd &mdash; Track what you play.</p>
     </footer>
 </body>
-<script>
-    // Shows logged username
-    (function(){
-        try {
-            const cur = JSON.parse(localStorage.getItem('gameboxd_currentUser') || 'null');
-            if (cur && cur.username) {
-                const el = document.getElementById('profileUsername');
-                if (el) el.textContent = cur.username;
-            }
-        } catch (e) { /* ignore */ }
-    })();
-</script>
-    <script src="auth.js"></script>
+
+<script type="module">
+        import { setupNavigationState } from "./auth.js";
+        import { initializeProfilePage } from "./profile.js";
+
+        setupNavigationState();
+        initializeProfilePage();
+    </script>
 </html>

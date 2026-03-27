@@ -1,38 +1,34 @@
-//(for now) checks info with localstorage accounts and saves current user on success
-(function(){
-  const ACCOUNTS_KEY = 'gameboxd_accounts';
-  const CURRENT_KEY = 'gameboxd_currentUser';
+import { ACCOUNTS_KEY, CURRENT_KEY } from './auth.js';
 
-  const form = document.getElementById('loginForm');
-  const usernameEl = document.getElementById('username');
-  const passwordEl = document.getElementById('password');
-  const createBtn = document.getElementById('createAccountBtn');
+export function initializeLoginPage() {
+    const loginForm = document.querySelector('#loginForm');
+    const createAccountBtn = document.querySelector('#createAccountBtn');
 
-  function loadAccounts(){
-    try { return JSON.parse(localStorage.getItem(ACCOUNTS_KEY) || '[]'); }
-    catch (e) { return []; }
-  }
+    function handleLoginSubmit(event) {
+        event.preventDefault();
+        const username = document.querySelector('#username').value.trim();
+        const password = document.querySelector('#password').value;
 
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    const user = usernameEl.value.trim();
-    const pass = passwordEl.value;
-    if (!user || !pass) { alert('Please enter both username and password.'); return; }
+        if (!username || !password) {
+            alert('Please enter both username and password.');
+            return;
+        }
 
-    const accounts = loadAccounts();
-    const match = accounts.find(a => a.username === user && a.password === pass);
-    if (!match) {
-      alert('Invalid username or password.');
-      return;
+        const accounts = JSON.parse(localStorage.getItem(ACCOUNTS_KEY) || '[]');
+        const userMatch = accounts.find(acc => acc.username === username && acc.password === password);
+
+        if (userMatch) {
+            localStorage.setItem(CURRENT_KEY, JSON.stringify({ username: userMatch.username }));
+            window.location.href = 'profile.html';
+        } else {
+            alert('Invalid username or password.');
+        }
     }
 
-    // Saves current user and redirects to profile
-    localStorage.setItem(CURRENT_KEY, JSON.stringify({ username: match.username }));
-    window.location.href = 'profile.html';
-  });
+    function navigateToCreateAccount() {
+        window.location.href = 'createAccount.html';
+    }
 
-  createBtn.addEventListener('click', function(){
-    window.location.href = 'createAccount.html';
-  });
-
-})();
+    if (loginForm) loginForm.addEventListener('submit', handleLoginSubmit);
+    if (createAccountBtn) createAccountBtn.addEventListener('click', navigateToCreateAccount);
+}
