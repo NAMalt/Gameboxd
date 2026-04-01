@@ -23,7 +23,8 @@
 
         <!-- Profile Header -->
         <div class="profile-header">
-            <div class="avatar">PFP</div>
+            <div class="avatar" id="profileAvatar">PFP</div>
+    
             <div class="profile-info">
                 <h1 id="profileUsername">Username</h1>
                 <div class="profile-stats">
@@ -37,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <button class="edit-btn">Edit Profile</button>
+            <a href="edit-profile.html" class="edit-btn">Edit Profile</a>
         </div>
 
         <!-- Favorites -->
@@ -107,13 +108,13 @@
     <footer>
         <p>Gameboxd &mdash; Track what you play.</p>
     </footer>
-</body>
 
-<script type="module">
+    <script type="module">
         import { setupNavigationState } from "./auth.js";
         import { initializeProfilePage } from "./profile.js";
 
         setupNavigationState();
         initializeProfilePage();
     </script>
+</body>
 </html>
