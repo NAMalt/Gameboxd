@@ -31,11 +31,14 @@
     </main>
 
     <script type="module">
-        import { initializeLoginPage } from "./login.js";
-        import { setupNavigationState } from "./auth.js";
+        import { LoginApp } from "./login.js";
+        import { AuthManager } from "./auth.js";
 
-        initializeLoginPage();
-        setupNavigationState();
+        const auth = new AuthManager();
+        auth.setupNavigationState();
+
+        const app = new LoginApp();
+        app.init();
     </script>
 </body>
 </html>

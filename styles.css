@@ -12,7 +12,9 @@
     --muted: #7a7f94;
     --danger: #ff5c5c;
 }
+/*base colors to use*/
 
+/*styling for body*/ 
 body {
     font-family: 'DM Sans', sans-serif;
     background: var(--bg);
@@ -22,7 +24,7 @@ body {
 
 a { color: inherit; text-decoration: none; }
 
-/* === NAV === */
+/* === NAV BAR=== */
 nav {
     background: var(--surface);
     border-bottom: 2px solid var(--border);
@@ -33,7 +35,7 @@ nav {
     height: 125px;
 }
 
-.nav-logo {
+.nav-logo { /* the website logo styling*/
     font-family: 'Press Start 2P', monospace;
     font-size: 2.5rem;
     color: var(--accent);
@@ -42,7 +44,8 @@ nav {
 }
 
 nav ul { list-style: none; display: flex; gap: 0.5rem; }
-
+/* all of the nav ul sections are for the navigation spacing, typography, and other features like the hover color change
+and active section color change (for example if im in profile.html the word profile is whiter than the others)*/
 nav ul li a {
     padding: 0.4rem 0.9rem;
     border-radius: 6px;
@@ -57,7 +60,7 @@ nav ul li a.active {
     color: var(--text);
     background: var(--border);
 }
-
+/* wrapper for max page width */
 /* === WRAPPER === */
 .wrapper {
     max-width: 1600px;
@@ -65,6 +68,7 @@ nav ul li a.active {
     padding: 2rem 1.5rem;
 }
 
+/* styling for section titles using flex */
 /* === SECTION HEADINGS === */
 .section-header {
     display: flex;
@@ -87,6 +91,8 @@ nav ul li a.active {
     color: var(--accent);
 }
 
+
+/* creates horizontal scrollable row for game cards*/
 /* === GAME CARD ROW === */
 .card-row {
     display: flex;
@@ -99,6 +105,7 @@ nav ul li a.active {
 .card-row::-webkit-scrollbar-track { background: var(--surface); }
 .card-row::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
+/* game card and game card cover style the game thumbails themselves to a fixed size */
 /* === GAME CARD === */
 .game-card {
     flex: 0 0 160px;
@@ -120,7 +127,7 @@ nav ul li a.active {
 }
 
 .game-card:hover .cover { border-color: var(--accent); }
-
+/* hover for the cards anf the label styling*/
 .game-card .card-label {
     font-size: 1.5rem;
     color: var(--text);
@@ -130,10 +137,11 @@ nav ul li a.active {
     text-overflow: ellipsis;
 }
 
-/* Stars in card rows */
+/* styling for the Stars in card rows */
 .stars { color: var(--accent); font-size: 0.7rem; margin-top: 0.2rem; }
 
-/* === FRIEND REVIEW CARD (smaller) === */
+/* === FRIEND REVIEW CARD (smaller) === *//* these are the styling for the friend cards, though we may part ways with them
+they are a bit smaller than game cards but would serve a similar purpose */
 .friend-card {
     flex: 0 0 100px;
     cursor: pointer;
@@ -162,6 +170,8 @@ nav ul li a.active {
 
 .friend-card:hover .cover { border-color: var(--accent); }
 
+
+/* from here to .profile-stats, this is the styling for the username and user statistics layout */
 /* === PROFILE PAGE === */
 .profile-header {
     display: flex;
@@ -193,6 +203,7 @@ nav ul li a.active {
 
 .profile-stats { display: flex; gap: 1.5rem; }
 
+/* the statbox sections individual containers such as 'games played'*/
 .stat-box {
     text-align: center;
     padding: 0.5rem 1rem;
@@ -205,6 +216,7 @@ nav ul li a.active {
 .stat-box .num { font-size: 1.3rem; font-weight: 600; color: var(--accent); }
 .stat-box .label { font-size: 0.75rem; color: var(--muted); }
 
+/* these two are styling for the edit button on profile.html, and handles the hover feature*/
 .edit-btn {
     padding: 0.5rem 1rem;
     border: 1px solid var(--border);
@@ -220,6 +232,7 @@ nav ul li a.active {
 
 .edit-btn:hover { border-color: var(--accent); color: var(--accent); }
 
+/* wrapping Flexbox layout to organize dropdown filters and the main search input field at the top of the games library. */
 /* === GAMES SEARCH PAGE === */
 .search-bar-wrapper {
     display: flex;
@@ -228,7 +241,7 @@ nav ul li a.active {
     margin-bottom: 1.5rem;
     flex-wrap: wrap;
 }
-
+/* style filter and search input to match theme*/
 .filter-select {
     padding: 0.5rem 0.75rem;
     background: var(--surface);
@@ -252,11 +265,13 @@ nav ul li a.active {
     font-size: 0.85rem;
 }
 
+
 .search-input:focus, .filter-select:focus {
     outline: none;
     border-color: var(--accent);
 }
 
+/* styles for the search button */
 .search-btn {
     padding: 0.5rem 1.1rem;
     background: var(--accent);
@@ -269,6 +284,7 @@ nav ul li a.active {
     cursor: pointer;
 }
 
+/*detail layout and game cover style two column grid for game pages */
 /* === LOG / GAME DETAIL PAGE === */
 .game-detail-layout {
     display: grid;
@@ -289,7 +305,7 @@ nav ul li a.active {
     font-size: 3rem;
     color: var(--border);
 }
-
+/* game meta and like section handle the styling for game details, and the like button color*/
 .game-meta h1 { font-size: 1.5rem; margin-bottom: 0.4rem; }
 .game-meta p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.25rem; }
 
@@ -315,6 +331,7 @@ nav ul li a.active {
 
 .like-count { color: var(--muted); font-size: 0.9rem; }
 
+/* review section and text area style the area for user review input */
 .review-section h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
 
 textarea {
@@ -333,6 +350,7 @@ textarea {
 
 textarea:focus { outline: none; border-color: var(--accent); }
 
+/* star row sections create the interactive star bar rating system */
 .star-row { display: flex; gap: 0.25rem; margin-bottom: 0.75rem; }
 
 .star-row span {
@@ -344,6 +362,8 @@ textarea:focus { outline: none; border-color: var(--accent); }
 
 .star-row span.filled, .star-row span:hover { color: var(--accent); }
 
+
+/* styles the review submit button */
 .submit-btn {
     padding: 0.55rem 1.4rem;
     background: var(--accent);
@@ -356,6 +376,7 @@ textarea:focus { outline: none; border-color: var(--accent); }
     cursor: pointer;
 }
 
+/* review card sections styles the scrollable list of reviews */
 /* === REVIEW CARD (friend/user) === */
 .review-row {
     display: flex;
@@ -376,6 +397,9 @@ textarea:focus { outline: none; border-color: var(--accent); }
 .review-card .reviewer { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.4rem; }
 .review-card p { font-size: 0.82rem; color: var(--text); line-height: 1.5; }
 
+
+
+/* detail layout and similar grid styles the layout for the game details page and the grid of similar games */
 /* === GAME DETAILS FULL PAGE === */
 .detail-layout {
     display: grid;
@@ -403,6 +427,7 @@ textarea:focus { outline: none; border-color: var(--accent); }
 
 .similar-grid .cover-sm:hover { border-color: var(--accent); }
 
+/* styles the see more button on the same page as the above*/
 .see-more-btn {
     display: block;
     width: 100%;
@@ -418,6 +443,7 @@ textarea:focus { outline: none; border-color: var(--accent); }
     text-align: center;
 }
 
+/* A simplified search layout used specifically within the detail pages to allow quick navigation without leaving the current page */
 /* === SEARCH BAR (top of details page) === */
 .top-search {
     display: flex;
@@ -438,6 +464,8 @@ textarea:focus { outline: none; border-color: var(--accent); }
 
 .top-search input:focus { outline: none; border-color: var(--accent); }
 
+
+/* styles the footers for all pages*/
 /* === FOOTER === */
 footer {
     margin-top: 3rem;
@@ -448,6 +476,7 @@ footer {
     font-size: 0.85rem;
 }
 
+/* this block is responsible for changing layouts for small screens such as a phone*/
 /* === RESPONSIVE === */
 @media (max-width: 600px) {
     .game-detail-layout, .detail-layout { grid-template-columns: 1fr; }
@@ -456,6 +485,8 @@ footer {
     .nav-logo { font-size: 0.55rem; }
 }
 
+
+/* styles the center login box*/
 /* === LOGIN PAGE === */
 .login-container {
     max-width: 400px;
@@ -473,6 +504,8 @@ footer {
     color: var(--text);
 }
 
+/*  field/input/label styles the input field spacing and makes it fit for other devices. the rest
+takes care of the buttons and such*/
 .login-container .field { margin-bottom: 12px; }
 
 .login-container label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 14px; color: var(--muted); }
@@ -497,6 +530,7 @@ footer {
 
 .login-container .note { margin-top: 10px; font-size: 13px; color: var(--muted); }
 
+/* avatar options styles the profile picture/avatar selection row, and also takes care of the hover effect */
 .avatar-options {
     display: flex;
     gap: 20px;

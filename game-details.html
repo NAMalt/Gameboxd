@@ -99,7 +99,12 @@
         <p>Gameboxd &mdash; Track what you play.</p>
     </footer>
 
-    <script src="auth.js"></script>
+    <script type="module">
+        import { AuthManager } from "./auth.js";
+
+        const auth = new AuthManager();
+        auth.setupNavigationState();
+    </script>
 
 </body>
 </html>

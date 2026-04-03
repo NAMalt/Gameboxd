@@ -110,11 +110,14 @@
     </footer>
 
     <script type="module">
-        import { setupNavigationState } from "./auth.js";
-        import { initializeProfilePage } from "./profile.js";
+        import { AuthManager } from "./auth.js";
+        import { ProfileApp } from "./profile.js";
 
-        setupNavigationState();
-        initializeProfilePage();
+        const auth = new AuthManager();
+        auth.setupNavigationState();
+
+        const app = new ProfileApp();
+        app.render();
     </script>
 </body>
 </html>

@@ -5,6 +5,7 @@ import data from './SteamGames.json' with { type: 'json' };
 //console.log(data[0].steamid);
 //console.log(data[0].releasedate);
 
+//establishes variables for labels, covers, and the stars
 const labels = document.querySelectorAll('.card-label');
 
 const covers = document.querySelectorAll('.cover');
@@ -15,7 +16,7 @@ labels.forEach((cardlabel, i) => {
   if (data[i] != null){
     cardlabel.textContent = data[i].name;
   }
-});
+});//labels every entity based on the associated name in the json file, and if there is no name it leaves it blank
 
 
 covers.forEach((cover, i) => {
@@ -27,7 +28,7 @@ covers.forEach((cover, i) => {
 
 
 
-stars.forEach((stars, i) => {
+stars.forEach((stars, i) => {//shows the start rating for a game based on the number. higher the number the more stars show
   if (data[i] != null)
     {
       if (data[i].rating >= 95){

@@ -26,6 +26,15 @@
         </div>
     </div>
 
-    <script type="module" src="edit-profile.js"></script>
+    <script type="module">
+        import { ProfileEditor } from "./edit-profile.js";
+        import { AuthManager } from "./auth.js";
+
+        const auth = new AuthManager();
+        auth.setupNavigationState();
+
+        const editor = new ProfileEditor();
+        editor.init();
+    </script>
 </body>
 </html>

@@ -31,11 +31,14 @@
     </main>
 
     <script type="module">
-        import { initializeCreateAccountPage } from "./createAccount.js";
-        import { setupNavigationState } from "./auth.js";
+        import { CreateAccountApp } from "./createAccount.js";
+        import { AuthManager } from "./auth.js";
 
-        initializeCreateAccountPage();
-        setupNavigationState();
+        const auth = new AuthManager();
+        auth.setupNavigationState();
+
+        const app = new CreateAccountApp();
+        app.init();
     </script>
 </body>
 </html>

@@ -1,34 +1,47 @@
-import { ACCOUNTS_KEY, CURRENT_KEY } from './auth.js';
+import { AuthManager, Database } from './auth.js';
 
-export function initializeLoginPage() {
-    const loginForm = document.querySelector('#loginForm');
-    const createAccountBtn = document.querySelector('#createAccountBtn');
+export class LoginApp {//constructor that sends you to auth.js to get the new authmanager information, and then gets the login form and create account button
+    constructor() {
+        this.auth = new AuthManager();
+        this.loginForm = document.querySelector('#loginForm');
+        this.createAccountBtn = document.querySelector('#createAccountBtn');
+    }
 
-    function handleLoginSubmit(event) {
+   
+    init() {//makes these two buttons even listeners for sending you to createaccount or logging you in
+        if (this.loginForm) {
+            this.loginForm.addEventListener('submit', (event) => this.handleLoginSubmit(event));
+        }
+        if (this.createAccountBtn) {
+            this.createAccountBtn.addEventListener('click', () => this.navigateToCreateAccount());
+        }
+    }
+
+    
+    async handleLoginSubmit(event) {
         event.preventDefault();
-        const username = document.querySelector('#username').value.trim();
-        const password = document.querySelector('#password').value;
+        
+        const username = document.querySelector('#username').value.trim();//saves username as the value of username field
+        const password = document.querySelector('#password').value;//saves password as the value of the password field
 
         if (!username || !password) {
             alert('Please enter both username and password.');
-            return;
+            return;//checks to see if fields are emoty
         }
 
-        const accounts = JSON.parse(localStorage.getItem(ACCOUNTS_KEY) || '[]');
+        // Fetch accounts asynchronously using the Database class, and then checks to see if there is a match for the username and password
+        const accounts = await Database.get(this.auth.ACCOUNTS_KEY) || [];
         const userMatch = accounts.find(acc => acc.username === username && acc.password === password);
 
         if (userMatch) {
-            localStorage.setItem(CURRENT_KEY, JSON.stringify({ username: userMatch.username }));
+            await Database.save(this.auth.CURRENT_KEY, { username: userMatch.username });
             window.location.href = 'profile.html';
         } else {
             alert('Invalid username or password.');
         }
     }
 
-    function navigateToCreateAccount() {
+    navigateToCreateAccount() {
         window.location.href = 'createAccount.html';
-    }
-
-    if (loginForm) loginForm.addEventListener('submit', handleLoginSubmit);
-    if (createAccountBtn) createAccountBtn.addEventListener('click', navigateToCreateAccount);
+    }//navigate to create account when the create account button is clicked
 }

@@ -125,8 +125,10 @@
     </footer>
 
     <script type="module">
-        import { setupNavigationState } from "./auth.js";
-        setupNavigationState();
+        import { AuthManager } from "./auth.js";
+
+        const auth = new AuthManager();
+        auth.setupNavigationState();
     </script>
 
 </body>
