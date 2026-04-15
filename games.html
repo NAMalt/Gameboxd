@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gameboxd- Games</title>
+    <title>Gameboxd - Games</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <script type="module">
         import './readjson.js';
     </script>    
@@ -25,12 +26,14 @@
     <div class="wrapper">
 
         <!-- Search & Filters -->
-        <div class="search-bar-wrapper">
+        <form action="search.html" method="GET" class="search-bar-wrapper">
+            <!--
             <select class="filter-select">
                 <option>Rating ▾</option>
                 <option>Highest</option>
                 <option>Lowest</option>
             </select>
+
             <select class="filter-select">
                 <option>Year ▾</option>
                 <option>2024</option>
@@ -38,16 +41,18 @@
                 <option>2022</option>
                 <option>All Time</option>
             </select>
+
             <select class="filter-select">
                 <option>Genre ▾</option>
                 <option>RPG</option>
                 <option>Action</option>
                 <option>Strategy</option>
                 <option>Indie</option>
-            </select>
-            <input class="search-input" type="text" placeholder="Find a game..." />
-            <button class="search-btn">Search</button>
-        </div>
+            </select> -->
+
+            <input name="query" class="search-input" type="text" placeholder="Find a game..." />
+            <button type="submit" class="search-btn">Search</button>
+        </form>
 
         <!-- Popular This Week -->
         <div class="section-header">
