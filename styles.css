@@ -212,6 +212,12 @@ they are a bit smaller than game cards but would serve a similar purpose */
     border-radius: 6px;
     cursor: pointer;
 }
+/* resultsContainer is for search.html when users search a game so games appear in columns instead of rows*/
+#resultsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
 
 .stat-box .num { font-size: 1.3rem; font-weight: 600; color: var(--accent); }
 .stat-box .label { font-size: 0.75rem; color: var(--muted); }
