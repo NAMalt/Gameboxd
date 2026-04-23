@@ -1,35 +1,38 @@
-import { Database } from './auth.js';
+import { AuthManager } from './auth.js';
 
 export class ProfileEditor {
     constructor() {
-        // Store the key as a class property for better maintenance
-        this.AVATAR_KEY = 'userAvatar'; 
+        this.auth = new AuthManager();
         this.avatarOptions = document.querySelectorAll('.avatar-option');
-    }
+    }//creates the avatar options for the editor
 
-    init() {//initializes click options for each of the pictures
+    init() {
         if (this.avatarOptions.length > 0) {
             this.avatarOptions.forEach(option => {
                 option.addEventListener('click', () => this.handleAvatarSelection(option));
             });
         }
-    }
+    }//sets up the event listeners for the avatar options, calling handleAvatarSelection when clicked
 
     async handleAvatarSelection(element) {
-        const selectedAvatar = element.getAttribute('data-img');
+        const selectedAvatarPath = element.getAttribute('data-img');
 
-        if (selectedAvatar) {
-            try {
-                //saves the selected avatar data and then redirects you to the profile page where it will be rendered
-                await Database.save(this.AVATAR_KEY, selectedAvatar);
+        if (selectedAvatarPath) {
+            // gets user from url
+            const user = await this.auth.getLoggedInUser();
 
-                // Redirect to profile page after saving
-                window.location.href = 'profile.html';
-            } catch (error) {
-                console.error("failed to save data:", error);
+            if (user) {
+                //update based on class instance
+                user.profilePicture = selectedAvatarPath;
+
+                // sends back to profile while keeping the user name in the URL
+                window.location.href = `profile.html?user=${user.username}`;
+            } else {
+                //if ?user= is missing from the address bar
+                alert("No user found. Ensure the URL says ?user=" + 
+                      (new URLSearchParams(window.location.search).get('user') || "nothing"));
+                window.location.href = 'login.html';
             }
-        } else {
-            console.error("data not found.");
         }
     }
 }
