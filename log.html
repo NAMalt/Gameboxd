@@ -21,38 +21,41 @@
 
     <div class="wrapper">
 
-        <!-- Game Info + Write Review -->
+        <!-- Game Info + Review -->
         <div class="game-detail-layout">
 
             <!-- Left: Cover + Meta -->
             <div>
-                <div class="game-cover-lg"></div>
-                <div style="margin-top: 1rem;">
-                    <p style="font-size:0.85rem; color:var(--muted);">Release Date: Jan 1, 2024</p>
-                    <p style="font-size:0.85rem; color:var(--muted);">Devs: Studio Name</p>
-                    <p style="font-size:0.85rem; color:var(--muted);">Genre: Action / RPG</p>
+                <div class="game-cover-lg">
+                    <img id="gameCover" alt="Game Cover">
+                </div>
+
+                <div class="game-meta">
+                    <p id="releaseDate"></p>
+                    <p id="devs"></p>
+                    <p id="genre"></p>
                 </div>
             </div>
 
             <!-- Right: Review Form -->
             <div>
-                <h1 style="font-size:1.6rem; margin-bottom:0.25rem;">Game Title</h1>
+                <h1 id="gameTitle"></h1>
 
                 <div class="like-section">
                     <button class="like-btn">♥</button>
-                    <span class="like-count">12,341 likes</span>
+                    <span class="like-count" id="likeCount"></span>
                 </div>
 
                 <div class="review-section">
                     <h3>Write Your Review</h3>
-                    <textarea placeholder="What did you think?"></textarea>
+                    <textarea id="reviewText" placeholder="What did you think?"></textarea>
 
-                    <div class="star-row">
-                        <span>★</span>
-                        <span>★</span>
-                        <span>★</span>
-                        <span>★</span>
-                        <span>★</span>
+                    <div class="star-row" id="starRating">
+                        <span data-value="1">★</span>
+                        <span data-value="2">★</span>
+                        <span data-value="3">★</span>
+                        <span data-value="4">★</span>
+                        <span data-value="5">★</span>
                     </div>
 
                     <button class="submit-btn">Submit Review</button>
@@ -66,19 +69,7 @@
             <a href="#">See all →</a>
         </div>
 
-        <div class="review-row">
-            <div class="review-card">
-                <div class="reviewer">Friend1 &mdash; <span style="color:var(--accent)">★★★☆☆</span></div>
-                <p>Really enjoyed the combat system, but the story felt a bit weak in the third act...</p>
-            </div>
-            <div class="review-card">
-                <div class="reviewer">Friend2 &mdash; <span style="color:var(--accent)">★★★★★</span></div>
-                <p>Absolute masterpiece. One of the best games I've played in years. Can't recommend it enough.</p>
-            </div>
-            <div class="review-card">
-                <div class="reviewer">Friend3 &mdash; <span style="color:var(--accent)">★★☆☆☆</span></div>
-                <p>Not really my type of game, but I can see why others love it. Graphics are stunning though.</p>
-            </div>
+        <div class="review-row" id="friendReviews">
         </div>
 
         <!-- Other User Reviews -->
@@ -87,19 +78,8 @@
             <a href="#">See all →</a>
         </div>
 
-        <div class="review-row">
-            <div class="review-card">
-                <div class="reviewer">user1234 &mdash; <span style="color:var(--accent)">★★★★☆</span></div>
-                <p>Solid entry in the series. New mechanics feel fresh, though some bugs persist at launch.</p>
-            </div>
-            <div class="review-card">
-                <div class="reviewer">gamer99 &mdash; <span style="color:var(--accent)">★★★★★</span></div>
-                <p>Completely blown away. The world-building alone deserves a 10/10. Spent 80 hours and loved every second.</p>
-            </div>
-            <div class="review-card">
-                <div class="reviewer">coolplayer &mdash; <span style="color:var(--accent)">★★★☆☆</span></div>
-                <p>Fun but flawed. Worth picking up on sale. The side quests are surprisingly deep.</p>
-            </div>
+        <div class="review-row" id="userReviews">
+
         </div>
 
     </div>
@@ -110,10 +90,11 @@
 
     <script type="module">
         import { AuthManager } from "./auth.js";
-        
         const auth = new AuthManager();
         auth.setupNavigationState();
     </script>
+
+    <script type="module" src="logpage.js"></script>
 
 </body>
 </html>
