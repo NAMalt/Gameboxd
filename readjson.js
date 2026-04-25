@@ -12,6 +12,8 @@ const covers = document.querySelectorAll('.cover');
 
 const stars = document.querySelectorAll('.stars');
 
+const cards = document.querySelectorAll('.game-card');
+
 labels.forEach((cardlabel, i) => {
   if (data[i] != null){
     cardlabel.textContent = data[i].name;
@@ -19,6 +21,7 @@ labels.forEach((cardlabel, i) => {
 });//labels every entity based on the associated name in the json file, and if there is no name it leaves it blank
 
 
+document.addEventListener("DOMContentLoaded", () =>  {
 covers.forEach((cover, i) => {
   if (data[i] != null) {
     const img = cover.querySelector('img');
@@ -26,6 +29,18 @@ covers.forEach((cover, i) => {
   }
 });
 
+})
+
+cards.forEach((card, i) => {
+  if (data[i] != null) {
+
+    card.addEventListener('click', () => {
+      const gameID = data[i].steamid;
+      window.location.href = `log.html?game=${gameID}` //brings to the review page, and has the game ID of the game you clicked
+    });
+  }
+
+});
 
 
 stars.forEach((stars, i) => {//shows the start rating for a game based on the number. higher the number the more stars show
