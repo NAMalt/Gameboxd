@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gameboxd - Edit Profile</title>
-    <link href="styles.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
     
 </head>
 <body>
@@ -27,8 +27,8 @@
     </div>
 
     <script type="module">
-        import { ProfileEditor } from "./edit-profile.js";
-        import { AuthManager } from "./auth.js";
+        import { ProfileEditor } from "/js/edit-profile.js";
+        import { AuthManager } from "/js/auth.js";
 
         const auth = new AuthManager();
         auth.setupNavigationState();

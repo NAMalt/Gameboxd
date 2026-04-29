@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gameboxd - Profile</title>
-    <link href="styles.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -110,8 +110,8 @@
     </footer>
 
     <script type="module">
-        import { AuthManager } from "./auth.js";
-        import { ProfileApp } from "./profile.js";
+        import { AuthManager } from "/js/auth.js";
+        import { ProfileApp } from "/js/profile.js";
 
         const auth = new AuthManager();
         auth.setupNavigationState();

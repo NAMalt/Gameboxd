@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - Gameboxd</title>
+
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <script type="module">
+        import '/js/search.js';
+    </script>
+</head>
+<body>
+<nav>
+    <span class="nav-logo">Gameboxd</span>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="log.html">Log</a></li>
+    </ul>
+</nav>
+
+<div class="wrapper">
+    <div class="search-bar-wrapper">
+        <input id="searchInput" class="search-input" type="text" placeholder="Find a game..." />
+        
+
+        <select id="sortSelect" class="filter-select">
+            <option value="default">Sort By ▾</option>
+            <option value="hightolow">Rating (High → Low)</option>
+            <option value="lowtohigh">Rating (Low → High)</option>
+            <option value="AtoZ">Name (A → Z)</option>
+            <option value="ZtoA">Name (Z → A)</option>
+            <option value="newtoold">Release Date (Newest → Oldest)</option>
+            <option value="oldtonew">Release Date (Oldest → Newest)</option>
+        </select>
+
+        <button id="searchBtn" class="search-btn">Search</button>
+    </div>
+
+    <h2 id="resultsTitle">Search Results</h2>
+
+    <div id="resultsContainer" class="card-row"></div>
+</div>
+
+<footer>
+    <p>Gameboxd — Track what you play.</p>
+</footer>
+
+
+
+</body>
+</html>
