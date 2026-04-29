@@ -3,20 +3,21 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gameboxd - Home</title>
-    <link href="styles.css" rel="stylesheet" />
+    <title>Gameboxd - Games</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <script type="module">
         import './js/readjson.js';
-    </script> 
+    </script>    
+    <link href="styles.css" rel="stylesheet" />
 </head>
 <body>
 
     <nav>
         <span class="nav-logo">Gameboxd</span>
         <ul>
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="profile.html">Profile</a></li>
-            <li><a href="games.html">Games</a></li>
+            <li><a href="games.html" class="active">Games</a></li>
             <li><a href="log.html">Log</a></li>
             <li><a href="login.html" id="loginNavLink">Login</a></li>
         </ul>
@@ -24,68 +25,119 @@
 
     <div class="wrapper">
 
+        <!-- Search & Filters -->
+        <form action="search.html" method="GET" class="search-bar-wrapper">
+            <!--
+            <select class="filter-select">
+                <option>Rating ▾</option>
+                <option>Highest</option>
+                <option>Lowest</option>
+            </select>
 
+            <select class="filter-select">
+                <option>Year ▾</option>
+                <option>2024</option>
+                <option>2023</option>
+                <option>2022</option>
+                <option>All Time</option>
+            </select>
 
-        <!-- Popular Games -->
+            <select class="filter-select">
+                <option>Genre ▾</option>
+                <option>RPG</option>
+                <option>Action</option>
+                <option>Strategy</option>
+                <option>Indie</option>
+            </select> -->
+
+            <input name="query" class="search-input" type="text" placeholder="Find a game..." />
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+
+        <!-- Popular This Week -->
         <div class="section-header">
-            <h2>Popular Games</h2>
-            <a href="games.html">See all →</a>
+            <h2>Popular This Week</h2>
+            <a href="#">See all →</a>
         </div>
 
         <div class="card-row">
             <div class="game-card">
-                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/221100/header.jpg" alt="Review this game"></div>
+                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/221100/header.jpg" alt="Description of image"></div>
                 <div class="card-label">Game Title</div>
                 <div class="stars">★★★★★</div>
             </div>
             <div class="game-card">
-                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/221100/header.jpg" alt="Review this game"></div>
+                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/601150/header.jpg" alt="Description of image"></div>
                 <div class="card-label">Game Title</div>
                 <div class="stars">★★★★☆</div>
             </div>
             <div class="game-card">
-                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/221100/header.jpg" alt="Review this game"></div>
+                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/477160/header.jpg" alt="Description of image"></div>
                 <div class="card-label">Game Title</div>
                 <div class="stars">★★★★☆</div>
             </div>
             <div class="game-card">
-                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/221100/header.jpg" alt="Review this game"></div>
+                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/42700/header.jpg" alt="Description of image"></div>
+                <div class="card-label">Game Title</div>
+                <div class="stars">★★★★★</div>
+            </div>
+        </div>
+
+        <!-- Popular This Year -->
+        <div class="section-header">
+            <h2>Popular This Year</h2>
+            <a href="#">See all →</a>
+        </div>
+
+        <div class="card-row">
+            <div class="game-card">
+                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12210/header.jpg" alt="Description of image"></div>                
+                <div class="card-label">Game Title</div>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="game-card">
+                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/400/header.jpg" alt="Description of image"></div>                
+                <div class="card-label">Game Title</div>
+                <div class="stars">★★★★☆</div>
+            </div>
+            <div class="game-card">
+                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/header.jpg" alt="Description of image"></div>                
+                <div class="card-label">Game Title</div>
+                <div class="stars">★★★★☆</div>
+            </div>
+            <div class="game-card">
+                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/6060/header.jpg" alt="Description of image"></div>                
                 <div class="card-label">Game Title</div>
                 <div class="stars">★★★☆☆</div>
             </div>
-            <div class="game-card">
-                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/221100/header.jpg" alt="Review this game"></div>
-                <div class="card-label">Game Title</div>
-                <div class="stars">★★★★★</div>
-            </div>
         </div>
 
-        <!-- Games you may like -->
+        <!-- Popular All Time -->
         <div class="section-header">
-            <h2>You May Also Like</h2>
-            <a href="games.html">See all →</a>
+            <h2>Popular All Time</h2>
+            <a href="#">See all →</a>
         </div>
 
         <div class="card-row">
             <div class="game-card">
-                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/221100/header.jpg" alt="Review this game"></div>
+                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/440/header.jpg" alt="Description of image"></div>                
                 <div class="card-label">Game Title</div>
+                <div class="stars">★★★★★</div>
             </div>
             <div class="game-card">
-                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/221100/header.jpg" alt="Review this game"></div>
+                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620980/header.jpg" alt="Description of image"></div>                
                 <div class="card-label">Game Title</div>
+                <div class="stars">★★★★★</div>
             </div>
             <div class="game-card">
-                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/221100/header.jpg" alt="Review this game"></div>
+                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/275850/header.jpg" alt="Description of image"></div>                
                 <div class="card-label">Game Title</div>
+                <div class="stars">★★★★☆</div>
             </div>
             <div class="game-card">
-                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/221100/header.jpg" alt="Review this game"></div>
+                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/304050/header.jpg" alt="Description of image"></div>                
                 <div class="card-label">Game Title</div>
-            </div>
-            <div class="game-card">
-                <div class="cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/221100/header.jpg" alt="Review this game"></div>
-                <div class="card-label">Game Title</div>
+                <div class="stars">★★★★★</div>
             </div>
         </div>
 
@@ -97,7 +149,7 @@
 
     <script type="module">
         import { AuthManager } from "./auth.js";
-
+        
         const auth = new AuthManager();
         auth.setupNavigationState();
     </script>
