@@ -1,4 +1,4 @@
-import data from '../SteamGames.json' with { type: 'json' };
+import data from './SteamGames.json' with { type: 'json' };
 
 
 const container = document.querySelector('#resultsContainer');
@@ -45,6 +45,8 @@ function convertdate(dateString) {
 
     return new Date(justnumber)
 }
+
+
 
 
 
@@ -109,6 +111,18 @@ function showgames()
 
         container.appendChild(gamedisplay)
     })
+    
+    const cards = document.querySelectorAll('.game-card');
+    cards.forEach((card, i) => {
+    if (results[i] != null) {
+
+        card.addEventListener('click', () => {
+        const gameID = results[i].steamid;
+        window.location.href = `log.html?game=${gameID}` //brings to the review page, and has the game ID of the game you clicked
+        });
+    }
+
+    });    
 }
 
 
