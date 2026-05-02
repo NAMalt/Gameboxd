@@ -1,9 +1,11 @@
-import data from './SteamGames.json' with { type: 'json' };
+import data from '../SteamGames.json' with { type: 'json' };
 
 //console.log(data[0].name);
 //console.log(data[0].company);
 //console.log(data[0].steamid);
 //console.log(data[0].releasedate);
+
+document.addEventListener("DOMContentLoaded", () =>  {
 
 //establishes variables for labels, covers, and the stars
 const labels = document.querySelectorAll('.card-label');
@@ -18,25 +20,35 @@ labels.forEach((cardlabel, i) => {
   if (data[i] != null){
     cardlabel.textContent = data[i].name;
   }
-});//labels every entity based on the associated name in the json file, and if there is no name it leaves it blank
+});
 
 
-document.addEventListener("DOMContentLoaded", () =>  {
 covers.forEach((cover, i) => {
   if (data[i] != null) {
     const img = cover.querySelector('img');
-    img.src = `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${data[i].steamid}/header.jpg`;
+    if (img) {
+        img.src = `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${data[i].steamid}/header.jpg`;
+    }
   }
 });
 
-})
 
 cards.forEach((card, i) => {
   if (data[i] != null) {
 
     card.addEventListener('click', () => {
+      const params = new URLSearchParams(window.location.search);
+      const username = params.get('user');
+
       const gameID = data[i].steamid;
-      window.location.href = `log.html?game=${gameID}` //brings to the review page, and has the game ID of the game you clicked
+      
+      let destination = `log.html?game=${gameID}`;
+      
+      if (username) {
+          destination += `&user=${username}`;
+      }
+
+      window.location.href = destination; 
     });
   }
 
@@ -81,3 +93,5 @@ stars.forEach((stars, i) => {//shows the start rating for a game based on the nu
       }                  
   }
 });
+
+})

@@ -1,0 +1,9 @@
+[
+  {
+    "username": "test",
+    "password": "password",
+    "profilePicture": "images/black.jpg",
+    "reviews": [],
+    "likedGames": []
+  }
+]

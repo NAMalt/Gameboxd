@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Gameboxd - Login</title>
-    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
 
@@ -31,14 +31,14 @@
     </main>
 
     <script type="module">
-        import { LoginApp } from "/js/login.js";
-        import { AuthManager } from "/js/auth.js";
+    import { LoginApp } from "./js/login.js";
+    import { AuthManager } from "./js/auth.js";
 
-        const auth = new AuthManager();
-        auth.setupNavigationState();
+    const auth = new AuthManager();
+    auth.setupNavigationState();
 
-        const app = new LoginApp();
-        app.init();
+    const app = new LoginApp();
+    app.init();
     </script>
 </body>
 </html>

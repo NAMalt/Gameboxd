@@ -1,9 +1,9 @@
-import { Database, User } from './auth.js';
+import { User } from './auth.js';
 
 export class CreateAccountApp {
     constructor() {
         this.form = document.querySelector('#createForm');
-    }//created the form for createAccount
+    }
 
     init() {
         if (this.form) {
@@ -17,18 +17,25 @@ export class CreateAccountApp {
         const username = document.querySelector('#newUsername').value.trim();
         const password = document.querySelector('#newPassword').value;
 
-        const accounts = await Database.getAccounts();
-        if (accounts.some(acc => acc.username === username)) {
-            alert('Username taken!');
-            return;
-        }//searches array for duplicate info and alerts if found
-
         const newUser = new User(username, password);
-        await Database.saveAccount(newUser);
-        //saves info to array
 
-        alert('Account created!');
-        //redirects with the user in the URL
-        window.location.href = `login.html?user=${username}`;
+        // POST route
+        try {
+            const response = await fetch('/api/accounts', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(newUser)
+            });
+
+            if (response.ok) {
+                alert('Account created!');
+                window.location.href = `login.html?user=${username}`;
+            } else {
+                const err = await response.json();
+                alert(err.message);
+            }
+        } catch (error) {
+            console.error("Transmission failed:", error);
+        }
     }
 }

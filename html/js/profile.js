@@ -9,7 +9,6 @@ export class ProfileApp {
         try {
             const user = await this.auth.getLoggedInUser();
 
-            //if no user go back to login
             if (!user) {
                 window.location.href = 'login.html';
                 return;
@@ -23,6 +22,11 @@ export class ProfileApp {
                 avatarDiv.textContent = ''; 
                 avatarDiv.style.backgroundImage = `url('${user.profilePicture}')`;
                 avatarDiv.classList.add('selected-avatar-style');
+            }
+
+            const editBtn = document.querySelector('.edit-btn');
+            if (editBtn) {
+                editBtn.href = `edit-profile.html?user=${user.username}`;
             }
             
         } catch (e) {
