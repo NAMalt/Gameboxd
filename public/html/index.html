@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gameboxd - Home</title>
-    <link href="./css/styles.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
     <script type="module">
-        import './js/readjson.js';
+        import '/js/readjson.js';
     </script> 
 </head>
 <body>
@@ -15,10 +15,10 @@
         <span class="nav-logo">Gameboxd</span>
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="profile.html">Profile</a></li>
-            <li><a href="games.html">Games</a></li>
-            <li><a href="log.html">Log</a></li>
-            <li><a href="login.html" id="loginNavLink">Login</a></li>
+            <li><a href="html/profile.html">Profile</a></li>
+            <li><a href="html/games.html">Games</a></li>
+            <li><a href="html/log.html">Log</a></li>
+            <li><a href="html/login.html" id="loginNavLink">Login</a></li>
         </ul>
     </nav>
 
@@ -96,8 +96,8 @@
     </footer>
 
     <script type="module">
-        import { AuthManager } from "./js/auth.js";
-        import './js/readjson.js'; 
+        import { AuthManager } from "/js/auth.js";
+        import '/js/readjson.js'; 
 
         const auth = new AuthManager();
         auth.setupNavigationState();

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Login - Gameboxd</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+    <nav>
+        <span class="nav-logo">Gameboxd</span>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="log.html">Log</a></li>
+            <li><a href="login.html" class="active" id="loginNavLink">Login</a></li>
+        </ul>
+    </nav>
+
+    <main class="login-container">
+        <div class="login-box">
+            <h1>Sign in</h1>
+            <form id="loginForm">
+                <div class="field">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required />
+                </div>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required />
+                </div>
+                <div class="actions">
+                    <button type="submit" class="btn-primary">Sign in</button>
+                    <button type="button" class="btn-secondary" id="createAccountBtn">Create account</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script type="module">
+        import { LoginApp } from "../js/login.js";
+        import { AuthManager } from "../js/auth.js";
+        
+        // Single initialization point
+        const auth = new AuthManager();
+        auth.setupNavigationState();
+        
+        const app = new LoginApp();
+        app.init();
+    </script>
+</body>
+</html>
